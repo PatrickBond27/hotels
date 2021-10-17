@@ -8,7 +8,7 @@
 -- Table structure for table `festivals`
 --
 
-CREATE TABLE `festivals` (
+CREATE TABLE `hotels` (
   `id` int(11) NOT NULL,
   `title` varchar(64) NOT NULL,
   `description` text DEFAULT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE `festivals` (
 -- Dumping data for table `festivals`
 --
 
-INSERT INTO `festivals` (`id`, `title`, `description`, `location`, `start_date`, `end_date`, `contact_name`, `contact_email`, `contact_phone`, `image_id`) VALUES
+INSERT INTO `hotels` (`id`, `title`, `description`, `location`, `start_date`, `end_date`, `contact_name`, `contact_email`, `contact_phone`, `image_id`) VALUES
 (1, 'Coachella', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum nisl enim, vitae placerat lorem dapibus ut. Ut lacinia ultrices convallis. Nam tristique sapien sed mollis mattis. Donec at facilisis lacus. Cras condimentum rhoncus sem lacinia congue. Nam egestas vulputate ipsum, viverra vehicula diam rutrum nec. Quisque commodo vehicula urna vel vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vehicula ex vel risus rutrum sodales. Sed consequat augue ac dui ornare, at aliquet lectus interdum. Nullam sed erat eget ex eleifend sagittis. Vestibulum tristique, neque et cursus blandit, nisi justo hendrerit diam, a condimentum dolor lacus ac elit.\r\n\r\nSuspendisse non fringilla nunc. Vestibulum ornare quis sem eu sollicitudin. Nam porta, eros sed aliquet varius, sapien est tempus orci, eu fermentum tortor augue in tortor. Curabitur faucibus pellentesque accumsan. Sed nec magna ut quam consectetur rutrum ac quis ante. Quisque lectus lorem, malesuada a porta non, laoreet quis urna. Aliquam lorem leo, accumsan ut bibendum eget, venenatis ac diam. Curabitur feugiat diam interdum, mattis quam quis, suscipit purus. Nunc convallis rutrum elit ac pharetra. Nunc eu tellus venenatis, dapibus mauris at, dignissim elit. Aliquam consectetur, dolor eu rhoncus tristique, mauris risus suscipit dolor, eget pharetra dolor orci id neque. Aenean vel metus ac dolor semper consectetur nec tincidunt nisi. Mauris a purus augue. Maecenas id imperdiet urna, sit amet convallis ipsum.\r\n\r\nNulla facilisi. In sed urna quis nunc finibus porta. Pellentesque euismod turpis id sollicitudin pretium. Integer ante leo, efficitur sit amet ultrices ac, pulvinar varius sapien. In vel consectetur orci. Donec eu lacus eget diam pharetra laoreet. Morbi et consequat mi. Ut ut purus non sapien interdum luctus. Pellentesque sit amet vulputate dolor. Donec in imperdiet metus, vitae commodo magna. Fusce pharetra laoreet felis eu imperdiet. Pellentesque maximus nunc accumsan elit euismod molestie. Donec id erat dictum, vestibulum velit non, placerat leo.', 'USA', '2020-12-31', '2021-01-05', 'Ted Sarno', 'ted@sarno.com', '+459 (632) 433-9307', 1),
 (2, 'Tomorrowland', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum nisl enim, vitae placerat lorem dapibus ut. Ut lacinia ultrices convallis. Nam tristique sapien sed mollis mattis. Donec at facilisis lacus. Cras condimentum rhoncus sem lacinia congue. Nam egestas vulputate ipsum, viverra vehicula diam rutrum nec. Quisque commodo vehicula urna vel vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vehicula ex vel risus rutrum sodales. Sed consequat augue ac dui ornare, at aliquet lectus interdum. Nullam sed erat eget ex eleifend sagittis. Vestibulum tristique, neque et cursus blandit, nisi justo hendrerit diam, a condimentum dolor lacus ac elit.\r\n\r\nSuspendisse non fringilla nunc. Vestibulum ornare quis sem eu sollicitudin. Nam porta, eros sed aliquet varius, sapien est tempus orci, eu fermentum tortor augue in tortor. Curabitur faucibus pellentesque accumsan. Sed nec magna ut quam consectetur rutrum ac quis ante. Quisque lectus lorem, malesuada a porta non, laoreet quis urna. Aliquam lorem leo, accumsan ut bibendum eget, venenatis ac diam. Curabitur feugiat diam interdum, mattis quam quis, suscipit purus. Nunc convallis rutrum elit ac pharetra. Nunc eu tellus venenatis, dapibus mauris at, dignissim elit. Aliquam consectetur, dolor eu rhoncus tristique, mauris risus suscipit dolor, eget pharetra dolor orci id neque. Aenean vel metus ac dolor semper consectetur nec tincidunt nisi. Mauris a purus augue. Maecenas id imperdiet urna, sit amet convallis ipsum.\r\n\r\nNulla facilisi. In sed urna quis nunc finibus porta. Pellentesque euismod turpis id sollicitudin pretium. Integer ante leo, efficitur sit amet ultrices ac, pulvinar varius sapien. In vel consectetur orci. Donec eu lacus eget diam pharetra laoreet. Morbi et consequat mi. Ut ut purus non sapien interdum luctus. Pellentesque sit amet vulputate dolor. Donec in imperdiet metus, vitae commodo magna. Fusce pharetra laoreet felis eu imperdiet. Pellentesque maximus nunc accumsan elit euismod molestie. Donec id erat dictum, vestibulum velit non, placerat leo.', 'Belgium', '2021-10-28', '2021-11-02', 'Misha Moris', 'misha@moris.com', '+245 (442) 254-1331', 2),
 (3, 'Burning Man', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum nisl enim, vitae placerat lorem dapibus ut. Ut lacinia ultrices convallis. Nam tristique sapien sed mollis mattis. Donec at facilisis lacus. Cras condimentum rhoncus sem lacinia congue. Nam egestas vulputate ipsum, viverra vehicula diam rutrum nec. Quisque commodo vehicula urna vel vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed vehicula ex vel risus rutrum sodales. Sed consequat augue ac dui ornare, at aliquet lectus interdum. Nullam sed erat eget ex eleifend sagittis. Vestibulum tristique, neque et cursus blandit, nisi justo hendrerit diam, a condimentum dolor lacus ac elit.\r\n\r\nSuspendisse non fringilla nunc. Vestibulum ornare quis sem eu sollicitudin. Nam porta, eros sed aliquet varius, sapien est tempus orci, eu fermentum tortor augue in tortor. Curabitur faucibus pellentesque accumsan. Sed nec magna ut quam consectetur rutrum ac quis ante. Quisque lectus lorem, malesuada a porta non, laoreet quis urna. Aliquam lorem leo, accumsan ut bibendum eget, venenatis ac diam. Curabitur feugiat diam interdum, mattis quam quis, suscipit purus. Nunc convallis rutrum elit ac pharetra. Nunc eu tellus venenatis, dapibus mauris at, dignissim elit. Aliquam consectetur, dolor eu rhoncus tristique, mauris risus suscipit dolor, eget pharetra dolor orci id neque. Aenean vel metus ac dolor semper consectetur nec tincidunt nisi. Mauris a purus augue. Maecenas id imperdiet urna, sit amet convallis ipsum.\r\n\r\nNulla facilisi. In sed urna quis nunc finibus porta. Pellentesque euismod turpis id sollicitudin pretium. Integer ante leo, efficitur sit amet ultrices ac, pulvinar varius sapien. In vel consectetur orci. Donec eu lacus eget diam pharetra laoreet. Morbi et consequat mi. Ut ut purus non sapien interdum luctus. Pellentesque sit amet vulputate dolor. Donec in imperdiet metus, vitae commodo magna. Fusce pharetra laoreet felis eu imperdiet. Pellentesque maximus nunc accumsan elit euismod molestie. Donec id erat dictum, vestibulum velit non, placerat leo.', 'USA', '2021-02-21', '2021-02-23', 'Crystal Coyer', 'crystal@coyer.net', '+69 (972) 926-0230', 3),
@@ -85,7 +85,7 @@ INSERT INTO `images` (`id`, `filename`) VALUES
 --
 -- Indexes for table `festivals`
 --
-ALTER TABLE `festivals`
+ALTER TABLE `hotels`
   ADD PRIMARY KEY (`id`),
   ADD KEY `festivals_image_fk` (`image_id`);
 
@@ -104,7 +104,7 @@ ALTER TABLE `images`
 --
 -- AUTO_INCREMENT for table `festivals`
 --
-ALTER TABLE `festivals`
+ALTER TABLE `hotels`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
@@ -122,7 +122,7 @@ ALTER TABLE `images`
 --
 -- Constraints for table `festivals`
 --
-ALTER TABLE `festivals`
+ALTER TABLE `hotels`
   ADD CONSTRAINT `festivals_image_fk` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`);
 
 -- --------------------------------------------------------

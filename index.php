@@ -1,13 +1,13 @@
 <?php require_once 'config.php'; ?>
 <?php 
-$festivals = Festival::findAll();
+$hotels = Hotel::findAll();
 ?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Music festivals</title>
+    <title>Hotels</title>
 
     <link href="<?= APP_URL ?>/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="<?= APP_URL ?>/assets/css/template.css" rel="stylesheet">
@@ -18,20 +18,19 @@ $festivals = Festival::findAll();
       <?php require 'include/navbar.php'; ?>
       <main role="main">
         <div>
-          <h1>Our festivals</h1>
+          <h1>Our hotels</h1>
           <div class="row">
-          <?php foreach ($festivals as $festival) { ?>
+          <?php foreach ($hotels as $hotel) { ?>
             <div class="col mb-4">
               <div class="card" style="width:15rem;">
                 <img src="<?= APP_URL ?>/assets/img/default.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><?= $festival->title ?></h5>
-                  <p class="card-text"><?= get_words($festival->description, 20) ?></p>
+                  <h5 class="card-title"><?= $hotel->name ?></h5>
+                  <p class="card-text"><?= get_words($hotel->address, 20) ?></p>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Location: <?= $festival->location ?></li>
-                  <li class="list-group-item">Start date: <?= $festival->start_date ?></li>
-                  <li class="list-group-item">End date: <?= $festival->end_date ?></li>
+                  <li class="list-group-item">Star Rating: <?= $hotel->star_rating ?></li>
+                  <li class="list-group-item">Phone Number: <?= $hotel->phone_number ?></li>
                 </ul>
               </div>
             </div>

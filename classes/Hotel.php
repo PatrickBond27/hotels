@@ -1,16 +1,12 @@
 <?php
 // the class Festival defines the structure of what every festival object will look like. ie. each festival will have an id, title, description etc...
 // NOTE : For handiness I have the very same spelling as the database attributes
-class Festival {
+class Hotel {
   public $id;
-  public $title;
-  public $description;
-  public $location;
-  public $start_date;
-  public $end_date;
-  public $contact_name;
-  public $contact_email;
-  public $contact_phone;
+  public $name;
+  public $address;
+  public $star_rating;
+  public $phone_number;
 
   public function __construct() {
     $this->id = null;
@@ -25,7 +21,7 @@ class Festival {
   }
 
   public static function findAll() {
-    $festivals = array();
+    $hotels = array();
 
     try {
       // call DB() in DB.php to create a new database object - $db
@@ -36,7 +32,7 @@ class Festival {
       
 
       // $select_sql is a variable containing the correct SQL that we want to pass to the database
-      $select_sql = "SELECT * FROM festivals";
+      $select_sql = "SELECT * FROM hotels";
       $select_stmt = $conn->prepare($select_sql);
       // $the SQL is sent to the database to be executed, and true or false is returned 
       $select_status = $select_stmt->execute();
@@ -54,19 +50,15 @@ class Festival {
         $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
         while ($row !== FALSE) {
           // Create $festival object, then put the id, title, description, location etc into $festival
-          $festival = new Festival();
-          $festival->id = $row['id'];
-          $festival->title = $row['title'];
-          $festival->description = $row['description'];
-          $festival->location = $row['location'];
-          $festival->start_date = $row['start_date'];
-          $festival->end_date = $row['end_date'];
-          $festival->contact_name = $row['contact_name'];
-          $festival->contact_email = $row['contact_email'];
-          $festival->contact_phone = $row['contact_phone'];
+          $hotel = new Hotel();
+          $hotel->id = $row['id'];
+          $hotel->name = $row['name'];
+          $hotel->address = $row['address'];
+          $hotel->star_rating = $row['star_rating'];
+          $hotel->phone_number = $row['phone_number'];
 
           // $festival now has all it's attributes assigned, so put it into the array $festivals[] 
-          $festivals[] = $festival;
+          $hotels[] = $hotel;
           
           // get the next festival from the list and return to the top of the loop
           $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
@@ -80,7 +72,7 @@ class Festival {
     }
 
     // return the array of $festivals to the calling code - index.php (about line 6)
-    return $festivals;
+    return $hotels;
   }
 
   public static function findById($id) {
