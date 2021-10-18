@@ -23,7 +23,16 @@ $hotels = Hotel::findAll();
           <?php foreach ($hotels as $hotel) { ?>
             <div class="col mb-4">
               <div class="card" style="width:15rem;">
-                <img src="<?= APP_URL ?>/assets/img/default.jpg" class="card-img-top" alt="...">
+              <?php
+                  // Use the image ID in festival, go to the Image table and get the image file name which includes the file location 
+                  $hotel_image = Image::findById($hotel->image_id);
+                  if ($hotel_image !== null) {
+                  ?>
+                    <!-- use the filename/location to display the correct image-->
+                    <img src="<?= APP_URL . "/" . $hotel_image->filename ?>" class="card-img-top" alt="...">
+                  <?php
+                  }
+                  ?>
                 <div class="card-body">
                   <h5 class="card-title"><?= $hotel->name ?></h5>
                   <p class="card-text"><?= get_words($hotel->address, 20) ?></p>

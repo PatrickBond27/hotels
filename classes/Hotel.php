@@ -7,6 +7,7 @@ class Hotel {
   public $address;
   public $star_rating;
   public $phone_number;
+  public $image_id;
 
   public function __construct() {
     $this->id = null;
@@ -56,6 +57,7 @@ class Hotel {
           $hotel->address = $row['address'];
           $hotel->star_rating = $row['star_rating'];
           $hotel->phone_number = $row['phone_number'];
+          $hotel->image_id = $row['image_id'];
 
           // $festival now has all it's attributes assigned, so put it into the array $festivals[] 
           $hotels[] = $hotel;
