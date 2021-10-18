@@ -25,6 +25,7 @@ $hotels = Hotel::findAll();
               <div class="card" style="width:15rem;">
               <?php
                   // Use the image ID in festival, go to the Image table and get the image file name which includes the file location 
+                  // I changed the class name festival to hotel for my case study
                   $hotel_image = Image::findById($hotel->image_id);
                   if ($hotel_image !== null) {
                   ?>

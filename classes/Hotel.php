@@ -1,6 +1,7 @@
 <?php
 // the class Festival defines the structure of what every festival object will look like. ie. each festival will have an id, title, description etc...
 // NOTE : For handiness I have the very same spelling as the database attributes
+// I changed the class name and changed the public classes
 class Hotel {
   public $id;
   public $name;
@@ -78,7 +79,45 @@ class Hotel {
   }
 
   public static function findById($id) {
-    throw new Exception("Not yet implemented");
+    $hotel = null;
+
+    try {
+      $db = new DB();
+      $db->open();
+      $conn = $db->get_connection();
+
+      $select_sql = "SELECT * FROM hotels WHERE id = :id";
+      $select_params = [
+          ":id" => $id
+      ];
+      $select_stmt = $conn->prepare($select_sql);
+      $select_status = $select_stmt->execute($select_params);
+
+      if (!$select_status) {
+        $error_info = $select_stmt->errorInfo();
+        $message = "SQLSTATE error code = ".$error_info[0]."; error message = ".$error_info[2];
+        throw new Exception("Database error executing database query: " . $message);
+      }
+
+      if ($select_stmt->rowCount() !== 0) {
+        $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
+          
+        $hotel = new Hotel();
+          $hotel->id = $row['id'];
+          $hotel->name = $row['name'];
+          $hotel->address = $row['address'];
+          $hotel->star_rating = $row['star_rating'];
+          $hotel->phone_number = $row['phone_number'];
+          $hotel->image_id = $row['image_id'];
+      }
+    }
+    finally {
+      if ($db !== null && $db->is_open()) {
+        $db->close();
+      }
+    }
+
+    return $hotel;
   }
 }
 ?>
