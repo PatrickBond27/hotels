@@ -70,31 +70,29 @@ try {
                 <input placeholder="Title" type="text" id="title" class="form-control" value="<?= $hotel->name ?>" disabled />
               </div>
 
-              <div class="form-group">
-                <label class="labelHidden" for="date">Address</label>
-                <textarea name="description" rows="3" id="description" class="form-control" disabled><?= $hotel->address ?></textarea>
-              </div>
-
               <!-- This group is not used for my database -->
-              <!-- <div class="form-group"> -->
-                <!-- <label class="labelHidden" for="location">Location</label> -->
-                <!-- <select class="form-control" name="location" id="location" disabled> -->
+              <div class="form-group">
+                <label class="labelHidden" for="address">Address</label>
+                <select class="form-control" name="address" id="address" disabled>
                   <!-- triple === means if it is equal. So is location is equal to "USA" display USA, if location is equal to "Belgium" display ...you get the idea..-->
-                  <!-- <option value="USA" <?= (($hotel->location === "USA") ? "selected" : "") ?>>USA</option> -->
-                  <!-- <option value="Belgium" <?= (($hotel->location === "Belgium") ? "selected" : "") ?>>Belgium</option> -->
-                  <!-- <option value="Brazil" <?= (($hotel->location === "Brazil") ? "selected" : "") ?>>Brazil</option> -->
-                  <!-- <option value="UK" <?= (($hotel->location === "UK") ? "selected" : "") ?>>UK</option> -->
-                  <!-- <option value="Germany" <?= (($hotel->location === "Germany") ? "selected" : "") ?>>Germany</option> -->
-                  <!-- <option value="Japan" <?= (($hotel->location === "Japan") ? "selected" : "") ?>>Japan</option> -->
-                  <!-- <option value="Netherlands" <?= (($hotel->location === "Netherlands") ? "selected" : "") ?>>Netherlands</option> -->
-                  <!-- <option value="Hungary" <?= (($hotel->location === "Hungary") ? "selected" : "") ?>>Hungary</option> -->
-                  <!-- <option value="Morocco" <?= (($hotel->location === "Morocco") ? "selected" : "") ?>>Morocco</option> -->
-                  <!-- <option value="Spain" <?= (($hotel->location === "Spain") ? "selected" : "") ?>>Spain</option> -->
-                  <!-- <option value="Canada" <?= (($hotel->location === "Canada") ? "selected" : "") ?>>Canada</option> -->
-                  <!-- <option value="Croatia" <?= (($hotel->location === "Croatia") ? "selected" : "") ?>>Croatia</option> -->
-                  <!-- <option value="Philippines" <?= (($hotel->location === "Philippines") ? "selected" : "") ?>>Philippines</option> -->
-                <!-- </select> -->
-              <!-- </div> -->
+                  <option value="2864 S Pacific Ave, Cannon Beach, OR 97110-3153" <?= (($hotel->address === "2864 S Pacific Ave, Cannon Beach, OR 97110-3153") ? "selected" : "") ?>>2864 S Pacific Ave, Cannon Beach, OR 97110-3153</option>
+                  <option value="Rue Duquesnoy 5, Brussels 1000 Belgium" <?= (($hotel->address === "Rue Duquesnoy 5, Brussels 1000 Belgium") ? "selected" : "") ?>>Rue Duquesnoy 5, Brussels 1000 Belgium</option>
+                  <option value="33 Wilmington Ave, Rehoboth Beach, DE 19971-2218" <?= (($hotel->address === "33 Wilmington Ave, Rehoboth Beach, DE 19971-2218") ? "selected" : "") ?>>33 Wilmington Ave, Rehoboth Beach, DE 19971-2218</option>
+                  <option value="Av. Atlantica, 4240 Copacabana, Rio de Janeiro, State of Rio de Janeiro 22070-002 Brazil" <?= (($hotel->address === "Av. Atlantica, 4240 Copacabana, Rio de Janeiro, State of Rio de Janeiro 22070-002 Brazil") ? "selected" : "") ?>>Av. Atlantica, 4240 Copacabana, Rio de Janeiro, State of Rio de Janeiro 22070-002 Brazil</option>
+                  <option value="51 Bedford Street what3words Address: ///drift.every.atoms, London WC2R 0PZ England" <?= (($hotel->address === "51 Bedford Street what3words Address: ///drift.every.atoms, London WC2R 0PZ England") ? "selected" : "") ?>>51 Bedford Street what3words Address: ///drift.every.atoms, London WC2R 0PZ England</option>
+                  <option value="Meadfoot Road, Torquay TQ1 2JP England" <?= (($hotel->address === "Meadfoot Road, Torquay TQ1 2JP England") ? "selected" : "") ?>>Meadfoot Road, Torquay TQ1 2JP England</option>
+                  <option value="Rothenbaumchaussee 10, 20148 Hamburg Germany" <?= (($hotel->address === "Rothenbaumchaussee 10, 20148 Hamburg Germany") ? "selected" : "") ?>>Rothenbaumchaussee 10, 20148 Hamburg Germany</option>
+                  <option value="10 Palace Place what3words Address: ///fairly.trim.behind, London SW1E 5BW England" <?= (($hotel->address === "10 Palace Place what3words Address: ///fairly.trim.behind, London SW1E 5BW England") ? "selected" : "") ?>>10 Palace Place what3words Address: ///fairly.trim.behind, London SW1E 5BW England</option>
+                  <option value="914 Shimojiyonaha, Miyakojima 906-0305 Okinawa Prefecture" <?= (($hotel->address === "914 Shimojiyonaha, Miyakojima 906-0305 Okinawa Prefecture") ? "selected" : "") ?>>914 Shimojiyonaha, Miyakojima 906-0305 Okinawa Prefecture</option>
+                  <option value="Javakade 766, 1019 SH Amsterdam The Netherlands" <?= (($hotel->address === "Javakade 766, 1019 SH Amsterdam The Netherlands") ? "selected" : "") ?>>Javakade 766, 1019 SH Amsterdam The Netherlands</option>
+                  <option value="Andrassy ut 8., Budapest 1061 Hungary" <?= (($hotel->address === "Andrassy ut 8., Budapest 1061 Hungary") ? "selected" : "") ?>>Andrassy ut 8., Budapest 1061 Hungary</option>
+                  <option value="No. 99 Sidi Moussa, Bahia, Marrakech 40000 Morocco" <?= (($hotel->address === "No. 99 Sidi Moussa, Bahia, Marrakech 40000 Morocco") ? "selected" : "") ?>>No. 99 Sidi Moussa, Bahia, Marrakech 40000 Morocco</option>
+                  <option value="La Rambla, 109, 08001 Barcelona Spain" <?= (($hotel->address === "La Rambla, 109, 08001 Barcelona Spain") ? "selected" : "") ?>>La Rambla, 109, 08001 Barcelona Spain</option>
+                  <option value="655 Burrard Street, Vancouver, British Columbia V6C 2R7 Canada" <?= (($hotel->address === "655 Burrard Street, Vancouver, British Columbia V6C 2R7 Canada") ? "selected" : "") ?>>655 Burrard Street, Vancouver, British Columbia V6C 2R7 Canada</option>
+                  <option value="Grabovac 209, Grabovac, Plitvice Lakes National Park 47246 Croatia" <?= (($hotel->address === "Grabovac 209, Grabovac, Plitvice Lakes National Park 47246 Croatia") ? "selected" : "") ?>>Grabovac 209, Grabovac, Plitvice Lakes National Park 47246 Croatia</option>
+                  <option value="Corner of Ayala and Makati Avenues, Makati, Luzon 1226 Philippines" <?= (($hotel->address === "Corner of Ayala and Makati Avenues, Makati, Luzon 1226 Philippines") ? "selected" : "") ?>>Corner of Ayala and Makati Avenues, Makati, Luzon 1226 Philippines</option>
+                </select>
+              </div>
 
               <!-- For the two groups I changed the labels to Star Rating and Phone Number -->
               <div class="form-group">
@@ -125,8 +123,8 @@ try {
 
               <div class="form-group">
                 <a class="btn btn-default" href="<?= APP_URL ?>/home.php">Cancel</a>
-                <button class="btn btn-warning" formaction="<?= APP_URL ?>/festival-edit.php">Edit</button>
-                <button class="btn btn-danger btn-festival-delete" formaction="<?= APP_URL ?>/festival-delete.php">Delete</button>
+                <button class="btn btn-warning" formaction="<?= APP_URL ?>/hotel-edit.php">Edit</button>
+                <button class="btn btn-danger btn-festival-delete" formaction="<?= APP_URL ?>/hotel-delete.php">Delete</button>
               </div>
             </form>
           </div>

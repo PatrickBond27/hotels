@@ -52,7 +52,7 @@ catch (Exception $ex){
             <div class="col table-responsive">
             <h1>Hotels
                  <!-- The add button will call festivals-create.php, the create will be implemented at a later stage -->
-                 <a class="btn button float-right" href="<?= APP_URL ?>/festival-create.php">Add</a>
+                 <a class="btn button float-right" href="<?= APP_URL ?>/hotel-create.php">Add</a>
                 </h1>
                 <form method="get">
                   <!-- I changed the table with my attributes -->
@@ -97,8 +97,8 @@ catch (Exception $ex){
                 <!-- View, Edit and Delete buttons link to the appropriate php file. In this version you will implement festival-view.php -->
                 <!-- I changed the View button from festival-view to hotel-view -->
                 <button class="btn button btn-festival" formaction="<?= APP_URL ?>/hotel-view.php">View</button>
-                <button class="btn button btn-festival" formaction="<?= APP_URL ?>/festival-edit.php">Edit</button>
-                <button class="btn button btn-festival btn-festival-delete" formaction="<?= APP_URL ?>/festival-delete.php">Delete</button>
+                <button class="btn button btn-festival" formaction="<?= APP_URL ?>/hotel-edit.php">Edit</button>
+                <button class="btn button btn-festival btn-festival-delete" formaction="<?= APP_URL ?>/hotel-delete.php">Delete</button>
                 </form>
             </div>
           </div>
