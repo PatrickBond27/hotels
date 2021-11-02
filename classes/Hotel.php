@@ -15,11 +15,95 @@ class Hotel {
   }
 
   public function save() {
-    throw new Exception("Not yet implemented");
+    try {
+      //Create the usual database connection - $conn
+      $db = new DB();
+      $db->open();
+      $conn = $db->get_connection();
+
+      $params = [
+        ":name" => $this->name,
+        ":address" => $this->address,
+        ":star_rating" => $this->star_rating,
+        ":phone_number" => $this->phone_number,
+        ":image_id" => $this->image_id
+      ];
+
+      // This code is now uncommentrf - I had it here but commented out for the Edit
+      // If there is no ID yet, then create a new Festival - use the INSERT SQL command
+       if ($this->id === null) {
+         $sql = "INSERT INTO hotels (" .
+           "name, address, star_rating, phone_number, image_id" .
+           ") VALUES (" .
+           ":name, :address, :star_rating, :phone_number, :image_id" .
+           ")";
+       } else {
+        // if there is an ID then it's an update for an existing festival in the database. 
+        $sql = "UPDATE hotels SET " .
+          "name = :name, " .
+          "address = :address, " .
+          "star_rating = :star_rating, " .
+          "phone_number = :phone_number, " .
+          "image_id = :image_id " .
+          "WHERE id = :id";
+        $params[":id"] = $this->id;
+      }
+
+
+      $stmt = $conn->prepare($sql);
+      $status = $stmt->execute($params);
+
+      if (!$status) {
+        $error_info = $stmt->errorInfo();
+        $message = "SQLSTATE error code = " . $error_info[0] . "; error message = " . $error_info[2];
+        throw new Exception("Database error executing database query: " . $message);
+      }
+
+      if ($stmt->rowCount() !== 1) {
+        throw new Exception("Failed to save hotel.");
+      }
+
+      //If the save() was a new festival it won't have an ID until it's been created in the database. 
+      // so Now retrieve the ID assigned by the DB. - remember auto_increment in the Database for assigning primary keys
+      if ($this->id === null) {
+        $this->id = $conn->lastInsertId();
+      }
+    } finally {
+      if ($db !== null && $db->is_open()) {
+        $db->close();
+      }
+    }
   }
 
   public function delete() {
-    throw new Exception("Not yet implemented");
+    try {
+      /*Create connection.*/
+      $db = new DB();
+      $db->open();
+      $conn = $db->get_connection();
+
+      $sql = "DELETE FROM hotels WHERE id = :id";
+      $params = [
+        ":id" => $this->id
+      ];
+
+      $stmt = $conn->prepare($sql);
+      $status = $stmt->execute($params);
+
+      if (!$status) {
+        $error_info = $stmt->errorInfo();
+        $message = "SQLSTATE error code = " . $error_info[0] . "; error message = " . $error_info[2];
+        throw new Exception("Database error executing database query: " . $message);
+      }
+
+      if ($stmt->rowCount() !== 1) {
+        throw new Exception("Failed to delete hotel.");
+      }
+    } finally {
+      if ($db !== null && $db->is_open()) {
+        $db->close();
+      }
+    }
   }
 
   public static function findAll() {
@@ -103,12 +187,12 @@ class Hotel {
         $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
           
         $hotel = new Hotel();
-          $hotel->id = $row['id'];
-          $hotel->name = $row['name'];
-          $hotel->address = $row['address'];
-          $hotel->star_rating = $row['star_rating'];
-          $hotel->phone_number = $row['phone_number'];
-          $hotel->image_id = $row['image_id'];
+        $hotel->id = $row['id'];
+        $hotel->name = $row['name'];
+        $hotel->address = $row['address'];
+        $hotel->star_rating = $row['star_rating'];
+        $hotel->phone_number = $row['phone_number'];
+        $hotel->image_id = $row['image_id'];
       }
     }
     finally {
@@ -119,5 +203,7 @@ class Hotel {
 
     return $hotel;
   }
+
+  
 }
 ?>
